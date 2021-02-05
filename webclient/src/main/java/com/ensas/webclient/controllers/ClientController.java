@@ -18,8 +18,8 @@ public class ClientController {
     ClientService clientService;
 
     @PostMapping("/login")
-    public void login(@RequestBody UserForm userForm){
-        clientService.login(userForm.getNum(), userForm.getPass());
+    public Boolean login(@RequestBody UserForm userForm){
+        return clientService.login(userForm.getNum(), userForm.getPass());
     }
 
     @GetMapping("/solde")
